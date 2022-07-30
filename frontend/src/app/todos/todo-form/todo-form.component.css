@@ -1,0 +1,24 @@
+.full-width {
+  width: 50%;
+}
+
+mat-card {
+  max-width: 40%;
+  margin: 1em auto;
+  text-align: center;
+  align-items: center;
+
+}
+
+p{
+  text-align: left;
+
+}
+
+button {
+  justify-content: stretch
+}
+
+.done{
+  text-decoration: line-through;
+}

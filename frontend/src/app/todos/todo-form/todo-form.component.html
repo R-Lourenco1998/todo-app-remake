@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <h2>Lista de afazeres:</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="description" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!form.get('description')?.valid">Adicionar</button>
+    </form>
+
+    <mat-list>
+      <mat-list-item *ngFor="let todo of todos">
+        <p matLine class="{{todo.done ? 'done' : ''}}">
+          {{ todo.description }}  {{todo.doneDate}}
+        </p>
+        <button mat-raised-button color="accent" [disabled]="todo.done" (click)="done(todo)">Concluído</button>
+        <button mat-raised-button color="warn" (click)="remove(todo)">
+          Remover
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
